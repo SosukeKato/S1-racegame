@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //x²‚ÌˆÚ“®ˆ—
+        float x = Input.GetAxisRaw("Horizontal");
     }
 }
