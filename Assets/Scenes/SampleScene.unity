@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _DirectinalSpeed: 1
+  _PlayerSpeed: 1
 --- !u!50 &1972870356
 Rigidbody2D:
   serializedVersion: 4

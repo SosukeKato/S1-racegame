@@ -22,7 +22,9 @@ public class PlayerMove : MonoBehaviour
     {
         //x²‚ÌˆÚ“®ˆ—
         x = Input.GetAxisRaw("Horizontal");
+        Vector2 velocity = new Vector2(x, _DirectinalSpeed).normalized;
+        _rb.velocity = velocity * _PlayerSpeed;
         //y²‚ÌˆÚ“®ˆ—
-        _rb.velocity = new Vector2(_rb.velocity.x * _PlayerSpeed, _DirectinalSpeed);
+        _rb.velocity = new Vector2(_rb.velocity.x, _DirectinalSpeed);
     }
 }
