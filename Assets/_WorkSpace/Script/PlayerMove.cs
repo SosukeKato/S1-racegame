@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : MonoBehaviour
 {
+    Rigidbody2D _rb;
     [SerializeField]
     int _DirectinalSpeed;
     [SerializeField]
     int _PlayerSpeed;
-    Rigidbody2D _rb;
     float x;
     // Start is called before the first frame update
     void Start()
