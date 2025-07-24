@@ -5,8 +5,9 @@ using UnityEngine;
 public class CharacterSpawn : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> _CharacterSpawnPosition;
-
+    List<GameObject> _SpawnCharacter;
+    [SerializeField]
+    List<Transform> _CharacterSpawnPosition;
 
     // Start is called before the first frame update
     void Start()
