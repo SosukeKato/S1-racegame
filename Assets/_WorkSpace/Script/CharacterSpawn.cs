@@ -12,7 +12,7 @@ public class CharacterSpawn : MonoBehaviour
     {
         for(int CharacterSpawnNumber = 0; CharacterSpawnNumber < _SpawnCharacter.Count; CharacterSpawnNumber++)
         {
-            Instantiate(_SpawnCharacter[CharacterSpawnNumber], new Vector3(CharacterSpawnNumber, 0, 0), Quaternion.identity);
+            Instantiate(_SpawnCharacter[CharacterSpawnNumber], new Vector3(CharacterSpawnNumber + 1, 0, 0), Quaternion.identity);
         }
     }
 
