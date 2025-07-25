@@ -34,5 +34,9 @@ public class PlayerMove : MonoBehaviour
         {
             _SpeedMagnification = 0.5f;
         }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            _SpeedMagnification = 1;
+        }
     }
 }
