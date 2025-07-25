@@ -11,10 +11,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     int _PlayerSpeed;
     [SerializeField]
-    float _PlayerDash;
-    [SerializeField]
-    float _PlayerDeceleration;
-    [SerializeField]
     float x;
     // Start is called before the first frame update
     void Start()
@@ -31,5 +27,6 @@ public class PlayerMove : MonoBehaviour
         _rb.velocity = velocity * _PlayerSpeed;
         //y²‚ÌˆÚ“®ˆ—
         _rb.velocity = new Vector2(_rb.velocity.x, _DirectinalSpeed);
+        //Œ¸‘¬‚Ìˆ—
     }
 }
