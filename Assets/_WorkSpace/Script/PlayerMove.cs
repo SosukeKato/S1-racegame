@@ -10,6 +10,11 @@ public class PlayerMove : MonoBehaviour
     int _DirectinalSpeed;
     [SerializeField]
     int _PlayerSpeed;
+    [SerializeField]
+    float _PlayerDash;
+    [SerializeField]
+    float _PlayerDeceleration;
+    [SerializeField]
     float x;
     // Start is called before the first frame update
     void Start()
