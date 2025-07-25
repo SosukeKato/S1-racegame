@@ -38,5 +38,10 @@ public class PlayerMove : MonoBehaviour
         {
             _SpeedMagnification = 1;
         }
+        //â¡ë¨ÇÃèàóù
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _SpeedMagnification = 2;
+        }
     }
 }
