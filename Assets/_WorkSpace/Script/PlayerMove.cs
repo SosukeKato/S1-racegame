@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     int _PlayerSpeed;
     [SerializeField]
+    float _SpeedMagnification = 1;
+    [SerializeField]
     float x;
     // Start is called before the first frame update
     void Start()
@@ -24,9 +26,13 @@ public class PlayerMove : MonoBehaviour
         //x²‚ÌˆÚ“®ˆ—
         x = Input.GetAxisRaw("Horizontal");
         Vector2 velocity = new Vector2(x, _DirectinalSpeed).normalized;
-        _rb.velocity = velocity * _PlayerSpeed;
+        _rb.velocity = velocity * _PlayerSpeed * _SpeedMagnification;
         //y²‚ÌˆÚ“®ˆ—
         _rb.velocity = new Vector2(_rb.velocity.x, _DirectinalSpeed);
         //Œ¸‘¬‚Ìˆ—
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            _SpeedMagnification = 0.5f;
+        }
     }
 }
