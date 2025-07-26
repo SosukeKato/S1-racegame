@@ -5,14 +5,14 @@ using UnityEngine;
 public class CharacterSpawn : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> _SpawnCharacter;
+    List<GameObject> _spawnCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int CharacterSpawnNumber = 0; CharacterSpawnNumber < _SpawnCharacter.Count; CharacterSpawnNumber++)
+        for(int CharacterSpawnNumber = 0; CharacterSpawnNumber < _spawnCharacter.Count; CharacterSpawnNumber++)
         {
-            Instantiate(_SpawnCharacter[CharacterSpawnNumber], new Vector3(CharacterSpawnNumber + 1, 0, 0), Quaternion.identity);
+            Instantiate(_spawnCharacter[CharacterSpawnNumber], new Vector3(CharacterSpawnNumber + 1, 0, 0), Quaternion.identity);
         }
     }
 

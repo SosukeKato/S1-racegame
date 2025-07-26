@@ -6,9 +6,9 @@ public class EnemyAI : MonoBehaviour
 {
     Rigidbody2D _rb;
     [SerializeField]
-    int _DirectinalSpeed;
+    int _directinalSpeed;
 
-    float _SpeedMagnification = 1;
+    float _speedMagnification = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rb.velocity = new Vector2(_rb.velocity.x, _DirectinalSpeed * _SpeedMagnification);
+        //yé≤ÇÃà⁄ìÆèàóù
+        _rb.velocity = new Vector2(_rb.velocity.x, _directinalSpeed * _speedMagnification);
     }
 }
