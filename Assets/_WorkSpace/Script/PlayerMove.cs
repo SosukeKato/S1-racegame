@@ -7,13 +7,14 @@ public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D _rb;
     [SerializeField]
-    int _DirectinalSpeed;
+    int _directinalSpeed;
     [SerializeField]
-    int _PlayerSpeed;
+    int _playerSpeed;
     [SerializeField]
     float x;
 
-    float _SpeedMagnification = 1;
+    float _speedMagnification = 1;
+    public bool _characterBack;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,23 +26,23 @@ public class PlayerMove : MonoBehaviour
     {
         //x²‚ÌˆÚ“®ˆ—
         x = Input.GetAxisRaw("Horizontal");
-        Vector2 velocity = new Vector2(x, _DirectinalSpeed).normalized;
-        _rb.velocity = velocity * _PlayerSpeed;
+        Vector2 velocity = new Vector2(x, _directinalSpeed).normalized;
+        _rb.velocity = velocity * _playerSpeed;
         //y²‚ÌˆÚ“®ˆ—
-        _rb.velocity = new Vector2(_rb.velocity.x, _DirectinalSpeed * _SpeedMagnification);
+        _rb.velocity = new Vector2(_rb.velocity.x, _directinalSpeed * _speedMagnification);
         //Œ¸‘¬‚Ìˆ—
         if (Input.GetKeyDown(KeyCode.S))
         {
-            _SpeedMagnification = 0.5f;
+            _speedMagnification = 0.5f;
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            _SpeedMagnification = 1;
+            _speedMagnification = 1;
         }
         //‰Á‘¬‚Ìˆ—
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _SpeedMagnification = 2;
+            _speedMagnification = 2;
         }
     }
 }
