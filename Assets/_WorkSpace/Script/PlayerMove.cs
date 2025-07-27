@@ -55,7 +55,7 @@ public class PlayerMove : MonoBehaviour
         //Rayがオブジェクトに衝突した場合の処理
         if (Physics2D.Raycast(origin, direction, distance).collider)
         {
-            
+            _characterBack = true;
         }
         //Rayをシーンビューに描画
         Debug.DrawRay(origin, direction * distance, Color.red);
