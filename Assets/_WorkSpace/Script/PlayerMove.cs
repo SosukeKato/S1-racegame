@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     float x;
 
     float _speedMagnification = 1;
-    public bool _characterBack;
+    bool _characterBack;
     // Start is called before the first frame update
     void Start()
     {
