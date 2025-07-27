@@ -44,5 +44,20 @@ public class PlayerMove : MonoBehaviour
         {
             _speedMagnification = 2;
         }
+
+
+        //Rayの発射場所
+        Vector2 origin = transform.position;
+        //Rayの発射方向
+        Vector2 direction = Vector2.up;
+        //Rayの長さ
+        float distance = 5f;
+        //Rayがオブジェクトに衝突した場合の処理
+        if (Physics2D.Raycast(origin, direction, distance).collider)
+        {
+            
+        }
+        //Rayをシーンビューに描画
+        Debug.DrawRay(origin, direction * distance, Color.red);
     }
 }
