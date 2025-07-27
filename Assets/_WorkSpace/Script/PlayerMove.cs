@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
             _speedMagnification = 1;
         }
         //加速の処理
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _time == 5)
         {
             _speedMagnification = 2;
         }
@@ -64,6 +64,7 @@ public class PlayerMove : MonoBehaviour
         //Rayをシーンビューに描画
         Debug.DrawRay(origin, direction * distance, Color.red);
         #endregion
+        //Playerがキャラクターの背後にいるときだけ_timeが加算される処理
         if (_characterBack)
         {
             _time += Time.deltaTime;
