@@ -44,8 +44,7 @@ public class PlayerMove : MonoBehaviour
         {
             _speedMagnification = 2;
         }
-
-
+        #region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
         //Rayの発射場所
         Vector2 origin = transform.position;
         //Rayの発射方向
@@ -61,7 +60,8 @@ public class PlayerMove : MonoBehaviour
         {
             _characterBack = false;
         }
-            //Rayをシーンビューに描画
-            Debug.DrawRay(origin, direction * distance, Color.red);
+        //Rayをシーンビューに描画
+        Debug.DrawRay(origin, direction * distance, Color.red);
+        #endregion
     }
 }
