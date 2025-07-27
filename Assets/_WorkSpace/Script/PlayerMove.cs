@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     float x;
 
-    float _time = 0;
+    float _speedUpCoolTime = 0;
     float _speedMagnification = 1;
     bool _characterBack;
     // Start is called before the first frame update
@@ -41,9 +41,10 @@ public class PlayerMove : MonoBehaviour
             _speedMagnification = 1;
         }
         //加速の処理
-        if (Input.GetKeyDown(KeyCode.Space) && _time == 5)
+        if (Input.GetKeyDown(KeyCode.Space) && _speedUpCoolTime == 5)
         {
             _speedMagnification = 2;
+            _speedUpCoolTime = 0;
         }
         #region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
         //Rayの発射場所
@@ -67,10 +68,10 @@ public class PlayerMove : MonoBehaviour
         //Playerがキャラクターの背後にいるときだけ_timeが加算される処理
         if (_characterBack)
         {
-            _time += Time.deltaTime;
-            if(_time >= 5)
+            _speedUpCoolTime += Time.deltaTime;
+            if(_speedUpCoolTime >= 5)
             {
-                _time = 5;
+                _speedUpCoolTime = 5;
             }
         }
     }
