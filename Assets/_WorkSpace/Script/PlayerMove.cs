@@ -63,5 +63,9 @@ public class PlayerMove : MonoBehaviour
         //Rayをシーンビューに描画
         Debug.DrawRay(origin, direction * distance, Color.red);
         #endregion
+        if (_characterBack)
+        {
+
+        }
     }
 }
