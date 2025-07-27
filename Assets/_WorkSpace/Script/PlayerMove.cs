@@ -57,7 +57,11 @@ public class PlayerMove : MonoBehaviour
         {
             _characterBack = true;
         }
-        //Rayをシーンビューに描画
-        Debug.DrawRay(origin, direction * distance, Color.red);
+        else
+        {
+            _characterBack = false;
+        }
+            //Rayをシーンビューに描画
+            Debug.DrawRay(origin, direction * distance, Color.red);
     }
 }

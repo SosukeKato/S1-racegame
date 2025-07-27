@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc89fb0c964c884e907e474debc1a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SpawnCharacter: []
+  _spawnCharacter: []
 --- !u!4 &2280600
 Transform:
   m_ObjectHideFlags: 0
@@ -417,9 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120a6bfe3cc036d47a574c9bd492f6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DirectinalSpeed: 4
-  _PlayerSpeed: 1
+  _directinalSpeed: 0
+  _playerSpeed: 1
   x: 0
+  _characterBack: 0
 --- !u!50 &1972870356
 Rigidbody2D:
   serializedVersion: 4
