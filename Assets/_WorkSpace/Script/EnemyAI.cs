@@ -34,8 +34,12 @@ public class EnemyAI : MonoBehaviour
         {
             _speedMagnification = 0.5f;
         }
-        //Rayをシーンビューに描画
-        Debug.DrawRay(origin, direction * distance, Color.red);
+        else
+        {
+            _speedMagnification = 1;
+        }
+            //Rayをシーンビューに描画
+            Debug.DrawRay(origin, direction * distance, Color.red);
 #endregion
     }
 }
