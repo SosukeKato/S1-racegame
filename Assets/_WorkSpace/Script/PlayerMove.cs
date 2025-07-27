@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     float x;
 
+    int _time = 0;
     float _speedMagnification = 1;
     bool _characterBack;
     // Start is called before the first frame update
@@ -65,7 +66,7 @@ public class PlayerMove : MonoBehaviour
         #endregion
         if (_characterBack)
         {
-
+            
         }
     }
 }
