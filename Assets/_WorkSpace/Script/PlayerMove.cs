@@ -48,31 +48,22 @@ public class PlayerMove : MonoBehaviour
         }
         #region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
         //Rayの発射場所
-        Vector2 origin = transform.position;
+        Vector2 _origin = transform.position;
         //Rayの発射方向
-        Vector2 direction = Vector2.up;
+        Vector2 _front = Vector2.up;
         //Rayの長さ
-        float distance = 5f;
-        //Rayがオブジェクトに衝突した場合の処理
-        if (Physics2D.Raycast(origin, direction, distance).collider)
-        {
-            _characterBack = true;
-        }
-        else
-        {
-            _characterBack = false;
-        }
-        //Rayをシーンビューに描画
-        Debug.DrawRay(origin, direction * distance, Color.red);
-        #endregion
-        //Playerがキャラクターの背後にいるときだけ_timeが加算される処理
-        if (_characterBack)
+        float _frontDistance = 5f;
+        //(PlayerがNPCの背後にいる時)Rayがオブジェクトに衝突した場合の処理
+        if (Physics2D.Raycast(_origin, _front, _frontDistance).collider)
         {
             _speedUpCoolTime += Time.deltaTime;
-            if(_speedUpCoolTime >= 5)
+            if (_speedUpCoolTime >= 5)
             {
                 _speedUpCoolTime = 5;
             }
         }
+        //Rayをシーンビューに描画
+        Debug.DrawRay(_origin, _front * _frontDistance, Color.red);
+        #endregion
     }
 }
