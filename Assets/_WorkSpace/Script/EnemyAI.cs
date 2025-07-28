@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     int _directinalSpeed;
 
     float _speedMagnification = 1;
+    float _speedUpCoolTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,11 @@ public class EnemyAI : MonoBehaviour
         //前に出ているRayがオブジェクトに衝突した場合の処理
         if (Physics2D.Raycast(_origin, _front, _frontDistance).collider)
         {
-
+            _speedUpCoolTime += Time.deltaTime;
+            if (_speedUpCoolTime >= 5)
+            {
+                _speedUpCoolTime = 5;
+            }
         }
 
         //Rayをシーンビューに描画
