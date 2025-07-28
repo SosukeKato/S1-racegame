@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
 
     float _speedUpCoolTime = 0;
     float _speedMagnification = 1;
-    bool _characterBack;
     // Start is called before the first frame update
     void Start()
     {
