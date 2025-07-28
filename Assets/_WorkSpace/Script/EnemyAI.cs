@@ -50,6 +50,11 @@ public class EnemyAI : MonoBehaviour
             {
                 _speedUpCoolTime = 5;
             }
+            if (_speedUpCoolTime == 5)
+            {
+                _speedMagnification = 2;
+                _speedUpCoolTime = 0;
+            }
         }
 
         //Rayをシーンビューに描画
