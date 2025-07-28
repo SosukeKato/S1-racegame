@@ -45,6 +45,7 @@ public class PlayerMove : MonoBehaviour
         {
             _speedMagnification = 2;
             _speedUpCoolTime = 0;
+            StartCoroutine("SpeedUpFinish");
         }
         #region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
         //Rayの発射場所
@@ -65,5 +66,11 @@ public class PlayerMove : MonoBehaviour
         //Rayをシーンビューに描画
         Debug.DrawRay(_origin, _front * _frontDistance, Color.red);
         #endregion
+        //スピードアップしてから3秒後に元の速度に戻る処理
+        IEnumerator SpeedUpFinish()
+        {
+            yield return new WaitForSeconds(3);
+            _speedMagnification = 1;
+        }
     }
 }
