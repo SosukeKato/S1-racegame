@@ -9,7 +9,6 @@ public class EnemyAI : MonoBehaviour
     int _directinalSpeed;
 
     float _speedMagnification = 1;
-    bool _characterLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +23,13 @@ public class EnemyAI : MonoBehaviour
 
 #region Raycastを使って条件の分岐を作る
         //Rayの発射場所
-        Vector2 origin = transform.position;
+        Vector2 _origin = transform.position;
         //右にRayを発射
-        Vector2 direction = Vector2.right;
+        Vector2 _right = Vector2.right;
         //Rayの長さ
-        float distance = 5f;
-        //Rayがオブジェクトに衝突した場合の処理
-        if (Physics2D.Raycast(origin, direction, distance).collider)
+        float _rightDistance = 5f;
+        //右に出ているRayがオブジェクトに衝突した場合の処理
+        if (Physics2D.Raycast(_origin, _right, _rightDistance).collider)
         {
             _speedMagnification = 0.5f;
         }
@@ -38,8 +37,18 @@ public class EnemyAI : MonoBehaviour
         {
             _speedMagnification = 1;
         }
-            //Rayをシーンビューに描画
-            Debug.DrawRay(origin, direction * distance, Color.red);
+        //前にRayを発射
+        Vector2 _front = Vector2.up;
+        //Rayの長さ
+        float _frontDistance = 5f;
+        //前に出ているRayがオブジェクトに衝突した場合の処理
+        if (Physics2D.Raycast(_origin, _front, _frontDistance).collider)
+        {
+
+        }
+
+        //Rayをシーンビューに描画
+        Debug.DrawRay(_origin, _right * _rightDistance, Color.red);
 #endregion
     }
 }
