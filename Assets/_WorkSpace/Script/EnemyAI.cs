@@ -54,11 +54,18 @@ public class EnemyAI : MonoBehaviour
             {
                 _speedMagnification = 2;
                 _speedUpCoolTime = 0;
+                StartCoroutine("SpeedUpFinish");
             }
         }
 
         //Rayをシーンビューに描画
         Debug.DrawRay(_origin, _right * _rightDistance, Color.red);
-#endregion
+        #endregion
+        //スピードアップしてから3秒後に元の速度に戻る処理
+        IEnumerator SpeedUpFinish()
+        {
+            yield return new WaitForSeconds(3);
+            _speedMagnification = 1;
+        }
     }
 }
