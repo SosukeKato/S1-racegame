@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour, Ranking.IDrive
             _speedUpCoolTime = 0;
             StartCoroutine("SpeedUpFinish");
         }
-        #region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
+#region RaycastでPlayerの前方にNPCがいるかどうか調べる処理
         //Rayの発射場所
         Vector2 _origin = transform.position;
         //Rayの発射方向
@@ -67,7 +67,7 @@ public class PlayerMove : MonoBehaviour, Ranking.IDrive
         }
         //Rayをシーンビューに描画
         Debug.DrawRay(_origin, _front * _frontDistance, Color.red);
-        #endregion
+#endregion
         //スピードアップしてから3秒後に元の速度に戻る処理
         IEnumerator SpeedUpFinish()
         {
