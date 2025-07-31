@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+
+[RequireComponent(typeof(CharacterClamp), typeof(Rigidbody2D))]
+public class EnemyAI : MonoBehaviour, Ranking.IDrive
 {
     Rigidbody2D _rb;
     [SerializeField]

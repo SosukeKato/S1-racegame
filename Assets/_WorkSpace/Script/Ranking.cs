@@ -1,18 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Ranking : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private List<IDrive> _drivers = new();
 
-    // Update is called once per frame
+    public void AddDriver(IDrive driver) => _drivers.Add(driver);
     void Update()
     {
-        
+        Transform first = GetFirstDriver();
+        if (first == null) return;
+
+        Debug.Log($"1st {first.gameObject.name}");
+    }
+
+    /// <summary>
+    ///    get 1st driver
+    /// </summary>
+    /// <returns></returns>
+    private Transform GetFirstDriver()
+    {
+        return _drivers
+            .OrderBy(n => -n.transform.position.y)
+            .First().transform;
+    }
+
+    public interface IDrive
+    {
+        public Transform transform { get; }
     }
 }

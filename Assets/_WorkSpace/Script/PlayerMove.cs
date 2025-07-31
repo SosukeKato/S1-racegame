@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, Ranking.IDrive
 {
     Rigidbody2D _rb;
     [SerializeField]
@@ -15,10 +15,13 @@ public class PlayerMove : MonoBehaviour
 
     float _speedUpCoolTime = 0;
     float _speedMagnification = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+
+        FindAnyObjectByType<Ranking>()?.AddDriver(this);
     }
 
     // Update is called once per frame
