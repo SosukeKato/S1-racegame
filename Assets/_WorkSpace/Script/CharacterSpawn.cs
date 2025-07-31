@@ -10,7 +10,6 @@ public class CharacterSpawn : MonoBehaviour
     [SerializeField]
     private Ranking _rankingSystem;
 
-    // Start is called before the first frame update
     void Start()
     {
         for(int CharacterSpawnNumber = 0; CharacterSpawnNumber < _spawnCharacter.Count; CharacterSpawnNumber++)
@@ -18,11 +17,5 @@ public class CharacterSpawn : MonoBehaviour
              EnemyAI enemy = Instantiate(_spawnCharacter[CharacterSpawnNumber], new Vector3(CharacterSpawnNumber + 1, 0, 0), Quaternion.identity);
             _rankingSystem?.AddDriver(enemy);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
