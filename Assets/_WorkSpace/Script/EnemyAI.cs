@@ -12,6 +12,8 @@ public class EnemyAI : MonoBehaviour, Ranking.IDrive
 
     float _speedMagnification = 1;
     float _speedUpCoolTime;
+    bool _speedUp;
+    bool _speedDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +64,13 @@ public class EnemyAI : MonoBehaviour, Ranking.IDrive
         //Rayをシーンビューに描画
         Debug.DrawRay(_origin, _right * _rightDistance, Color.red);
 #endregion
-        //スピードアップ中に他のキャラクターの横にずれる処理
+        //スピードアップ中のboolを取得
         if (_speedMagnification == 2)
+        {
+            _speedUp = true;
+        }
+        //スピードアップ中に他のキャラクターの横にずれる処理
+        if (_speedUp)
         {
             
         }
