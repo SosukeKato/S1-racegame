@@ -62,6 +62,11 @@ public class EnemyAI : MonoBehaviour, Ranking.IDrive
         //Rayをシーンビューに描画
         Debug.DrawRay(_origin, _right * _rightDistance, Color.red);
 #endregion
+        //スピードアップ中に他のキャラクターの横にずれる処理
+        if (_speedMagnification == 2)
+        {
+            
+        }
         //スピードアップしてから3秒後に元の速度に戻る処理
         IEnumerator SpeedUpFinish()
         {

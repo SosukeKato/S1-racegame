@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour, Ranking.IDrive
     float x;
 
     float _speedUpCoolTime = 0;
+    [SerializeField]
     float _speedMagnification = 1;
 
     // Start is called before the first frame update
